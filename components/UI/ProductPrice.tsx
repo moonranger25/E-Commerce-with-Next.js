@@ -24,7 +24,6 @@ const ProductPrice: React.FC<Props> = ({
     : 0;
   const irDiscountPrice = useExchangeRateGBPToIRR(discountPrice);
 
-  //style base on component position
   const textMainPriceSize = isLargeSize
     ? "text-xl md:text-3xl"
     : "text-md md:text-lg";
@@ -74,7 +73,6 @@ const ProductPrice: React.FC<Props> = ({
         ) : (
           <div>
             {isInSlider ? <div className="h-[1.4rem]"></div> : null}{" "}
-            {/* ☝slider cards (.slick-slide=>Slider component) are float and because of that, they don't accept height so, for making cards the same height, I have to do this hack*/}
             <div
               className={`flex items-center ${textMainPriceSize} font-bold no-underline`}
               style={{ flexDirection }}
