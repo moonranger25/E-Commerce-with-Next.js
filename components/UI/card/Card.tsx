@@ -4,6 +4,8 @@ import Link from "next/link";
 import StarRatingComponent from "react-star-rating-component";
 import { IProduct } from "../../../lib/types/products";
 import { urlFor } from "../../../lib/client";
+import CardActions from "./CardActions";
+import ProductPrice from "../ProductPrice";
 
 interface Props {
   product: IProduct;
@@ -50,9 +52,11 @@ const Card: React.FC<Props> = ({ product }) => {
                 {product.name}
               </h3>
             </div>
+            <ProductPrice price={product.price} discount={product.discount} />
           </div>
         </a>
       </Link>
+      <CardActions product={product} />
     </div>
   );
 };
