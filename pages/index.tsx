@@ -8,6 +8,8 @@ import { client } from "../lib/client";
 
 import Carousel from "../components/carousel";
 
+const Category = dynamic(() => import("../components/category/Category"));
+
 import { IProduct } from "../lib/types/products";
 import { newestProductsFn } from "../utilities/sortByTimeStamp";
 
@@ -27,6 +29,7 @@ const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
   return (
     <div>
       <Carousel />
+      <Category />
     </div>
   );
 };
