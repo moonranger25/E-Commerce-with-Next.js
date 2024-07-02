@@ -1,6 +1,8 @@
 import React from "react";
 import CategoryLgBox from "./CategoryLgBox";
 import SectionTitle from "../UI/SectionTitle";
+import CategorySmBox from "./CategorySmBox";
+import { categoryLgContent } from '../../mock/category-lg';
 
 const Category = () => {
   return (
