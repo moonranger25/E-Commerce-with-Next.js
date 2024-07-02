@@ -16,9 +16,9 @@ export const useExchangeRateGBPToIRR = (price: number) => {
           const irToman = Math.floor(data.conversion_result / 1000) * 1000; //common currency in Iran
           setExchangePrice(irToman);
         } else {
-          // const priceWithHardRateExchange = price * hardRateExchange;
-          // const irToman = Math.floor(priceWithHardRateExchange / 1000) * 1000;
-          // setExchangePrice(irToman);
+          const priceWithHardRateExchange = price * hardRateExchange;
+          const irToman = Math.floor(priceWithHardRateExchange / 1000) * 1000;
+          setExchangePrice(irToman);
           throw new Error();
         }
       } catch (e) {
@@ -28,7 +28,6 @@ export const useExchangeRateGBPToIRR = (price: number) => {
       }
     };
     if (price > 0) {
-      // fetchExchangeRate();
       const priceWithHardRateExchange = price * hardRateExchange;
       const irToman = Math.ceil(priceWithHardRateExchange / 1000) * 1000;
       setExchangePrice(irToman);
