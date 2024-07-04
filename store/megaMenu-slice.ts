@@ -9,10 +9,10 @@ const megaMenuSlice = createSlice({
   name: "megaMenu",
   initialState,
   reducers: {
-    openMegaMenu(state) {
+    openMegaMenu(state: { isMegaMenuOpen: boolean }) {
       state.isMegaMenuOpen = true;
     },
-    closeMegaMenu(state) {
+    closeMegaMenu(state: { isMegaMenuOpen: boolean }) {
       state.isMegaMenuOpen = false;
     },
   },
