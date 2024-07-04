@@ -1,5 +1,6 @@
 import React from "react";
 import { useCountdown } from "../../../hooks/useCountdown";
+import ExpiredNotice from "./ExpiredNotice";
 
 interface Props {
   targetDate: number;
