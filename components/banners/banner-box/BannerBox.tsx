@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 import DiscountCountdown from "../../UI/discountCountdown/DiscountCountdown";
 import { useLanguage } from "../../../hooks/useLanguage";
-import Link from "next/link";
 import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
 
 interface Props {
