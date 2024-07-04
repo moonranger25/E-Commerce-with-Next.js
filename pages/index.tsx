@@ -9,12 +9,12 @@ import dynamic from "next/dynamic";
 import { client } from "../lib/client";
 
 import Carousel from "../components/carousel";
+import Benefits from "../components/Benefits";
 
 const Category = dynamic(() => import("../components/category/Category"));
 const Offers = dynamic(() => import("../components/Offers/Offers"));
 const Newest = dynamic(() => import("../components/newest/Newest"));
 const Brands = dynamic(() => import("../components/brands"));
-const Banners = dynamic(() => import("../components/banners"), { srr: false});
 
 import { IProduct } from "../lib/types/products";
 import { newestProductsFn } from "../utilities/sortByTimeStamp";
@@ -39,7 +39,6 @@ const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
       <Offers />
       <Category />
       <Newest />
-      <Banners />
       <Brands />
 
     </div>
