@@ -18,6 +18,6 @@ const megaMenuSlice = createSlice({
   },
 });
 
-export const megaMenuAction = megaMenuSlice.actions;
+export const megaMenuActions = megaMenuSlice.actions;
 
 export default megaMenuSlice.reducer;

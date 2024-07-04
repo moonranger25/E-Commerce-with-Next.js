@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { megaMenuActions } from "../../../store/m-slice";
+
+import { megaMenuActions } from "../../../store/megaMenu-slice";
 import { useLanguage } from "../../../hooks/useLanguage";
 import menuItems from "../../../mock/menuItems";
-import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import { IDropDown } from "../../../lib/types/dropDown";
-import { useRouter } from "next/router";
 import { useWindowDimensions } from "../../../hooks/useWindowDimensions";
 import { IActiveMenuItemRootState } from "../../../lib/types/activeMenuItem";
 
