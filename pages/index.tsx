@@ -4,11 +4,17 @@ import { useDispatch } from "react-redux";
 import { specialOfferProductsActions } from "../store/specialOfferProducts-slice";
 import { newestProductsActions } from "../store/newestProduct-slice";
 
+import dynamic from "next/dynamic";
+
 import { client } from "../lib/client";
 
 import Carousel from "../components/carousel";
 
 const Category = dynamic(() => import("../components/category/Category"));
+const Offers = dynamic(() => import("../components/Offers/Offers"));
+const Newest = dynamic(() => import("../components/newest/Newest"));
+const Brands = dynamic(() => import("../components/brands"));
+const Banners = dynamic(() => import("../components/banners"), { srr: false});
 
 import { IProduct } from "../lib/types/products";
 import { newestProductsFn } from "../utilities/sortByTimeStamp";
@@ -29,7 +35,13 @@ const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
   return (
     <div>
       <Carousel />
+      <Benefits />
+      <Offers />
       <Category />
+      <Newest />
+      <Banners />
+      <Brands />
+
     </div>
   );
 };
