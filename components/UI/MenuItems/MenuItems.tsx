@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { megaMenuActions } from "../../../store/megaMenu-slice";
+import { megaMenuActions } from "../../../store/m-slice";
 import { useLanguage } from "../../../hooks/useLanguage";
 import menuItems from "../../../mock/menuItems";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
