@@ -40,3 +40,12 @@ export interface IProduct {
   timeStamp?: number;
   starRating: number;
 }
+
+export type TImage = {
+  _key: string;
+  _type: "image";
+  asset: {
+    _ref: string;
+    _type: "reference";
+  };
+};
