@@ -14,7 +14,7 @@ interface Props {
   product: IProduct;
 }
 
-const CallToAction: React.FC<Props> = ({ product }) => {
+const CallToAction: React.FC<Props> = ({ product }: { product: IProduct }) => {
   const { price, discount } = product;
   const [counter, setCounter] = useState(1);
   const { t } = useLanguage();
