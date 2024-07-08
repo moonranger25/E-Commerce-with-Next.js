@@ -1,6 +1,7 @@
 import React from "react";
 import StarRatingComponent from "react-star-rating-component";
 import { useLanguage } from "../../hooks/useLanguage";
+import CallToAction from "./CallToAction";
 import { IProduct } from "../../lib/types/products";
 
 interface Props {
@@ -55,6 +56,7 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
             })}
           </div>
         </div>
+        <CallToAction product={product} />
       </div>
     </div>
   );
