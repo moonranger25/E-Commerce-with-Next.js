@@ -4,11 +4,13 @@ import Breadcrumb from "../UI/Breadcrumb";
 import ImageSection from "./ImageSection";
 import DetailsSection from "./DetailsSection";
 import Benefits from "../Benefits";
+import SimilarProducts from "./SimilarProducts";
 
 interface Props {
   product: IProduct;
   products: IProduct[];
 }
+
 const ProductDetails: React.FC<Props> = ({
   product,
   products,
@@ -33,6 +35,7 @@ const ProductDetails: React.FC<Props> = ({
         <div className="border-2 my-8">
           <Benefits />
         </div>
+        <SimilarProducts products={similarProductsList}/>
       </div>
     </div>
   );
