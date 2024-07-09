@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { useLanguage } from "../../../hooks/useLanguage";
-import { NextArrow, PrevArrow } from "./CarouselBoxArrows";
 import Slider from "react-slick";
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
+import { useLanguage } from "../../../hooks/useLanguage";
+import { NextArrow, PrevArrow } from "./CarouselBoxArrows";
+
 
 interface Props {
   title: string;
@@ -28,9 +29,7 @@ const CarouselBox: React.FC<Props> = ({
     centerPadding: "60px",
     slidesToShow: 5,
     slidesToScroll: 5,
-    // initialSlide: 0,
     swipeToSlide: true,
-    // rtl: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     responsive: [
