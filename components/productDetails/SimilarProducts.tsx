@@ -6,10 +6,18 @@ import CarouselBoxCard from "../UI/CarouselBox/CarouselBoxCard";
 interface Props {
   products: IProduct[];
 }
-const SimilarProducts: React.FC<Props> = ({ products }) => {
+const SimilarProducts: React.FC<Props> = ({
+  products,
+}: {
+  products: IProduct;
+}) => {
   return (
     <div>
-      <CarouselBox title="similarProducts" full={true}></CarouselBox>
+      <CarouselBox title="similarProducts" full={true}>
+        {products.map((product) => {
+            <CarouselBoxCard key={product.slug.current} product={product} />
+        })}
+      </CarouselBox>
     </div>
   );
 };

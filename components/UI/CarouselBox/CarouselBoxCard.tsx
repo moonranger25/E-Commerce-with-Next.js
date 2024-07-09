@@ -1,15 +1,20 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+
 import { urlFor } from "../../../lib/client";
 import { IProduct } from "../../../lib/types/products";
-import Link from "next/link";
 import ProductPrice from "../ProductPrice";
 
 interface Props {
   product: IProduct;
 }
 
-const CarouselBoxCard: React.FC<Props> = ({ product }) => {
+const CarouselBoxCard: React.FC<Props> = ({
+  product,
+}: {
+  product: IProduct;
+}) => {
   return (
     <div className="w-full h-full px-2 my-2">
       <Link
