@@ -1,6 +1,7 @@
 import React from "react";
 import CarouselBox from "../UI/CarouselBox/CarouselBox";
 import { IProduct } from "../../lib/types/products";
+import CarouselBoxCard from "../UI/CarouselBox/CarouselBoxCard";
 
 interface Props {
   products: IProduct[];
