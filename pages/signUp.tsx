@@ -9,6 +9,7 @@ import { getError } from "../utilities/error";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { IUserInfoRootState } from "../lib/types/user";
+
 const SignUp: NextPage = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -34,14 +35,12 @@ const SignUp: NextPage = () => {
       jsCookie.set("userInfo", JSON.stringify(data));
       router.push("/");
     } catch (err: any) {
-      /* sanity.io is boycott for the people from Iran so I set cookies for whom don't use VPN in Iran*/
       if (err.response.data.status == 500) {
         dispatch(userInfoActions.userLogin(user));
         jsCookie.set("userInfo", JSON.stringify(user));
       }
       setErrorMessage(getError(err));
       console.log(getError(err));
-      // router.push("/");
     }
   }
   return (
