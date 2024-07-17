@@ -6,7 +6,6 @@ import { specialOfferProductsActions } from "../store/specialOfferProducts-slice
 import { newestProductsActions } from "../store/newestProduct-slice";
 
 import dynamic from "next/dynamic";
-
 import { client } from "../lib/client";
 
 import Carousel from "../components/carousel";
@@ -21,15 +20,17 @@ const Banners = dynamic(() => import("../components/banners"), { ssr: false });
 import { IProduct } from "../lib/types/products";
 import { newestProductsFn } from "../utilities/sortByTimeStamp";
 
-const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
+const Home: NextPage<{ products: IProduct[] }> = ({
+  products,
+}: {
+  products: IProduct;
+}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    //add products to offers list
     const offersProducts = products.filter((item) => item.discount);
     dispatch(specialOfferProductsActions.addProducts(offersProducts));
 
-    //add products to newest list
     const sortedProductsByTimeStamp = newestProductsFn(products);
     dispatch(newestProductsActions.addProducts(sortedProductsByTimeStamp));
   }, [dispatch, products]);
